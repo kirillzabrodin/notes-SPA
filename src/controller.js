@@ -1,0 +1,4 @@
+function SubmitNote() {
+  AddNote();
+  ClearTextBox();
+}
