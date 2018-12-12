@@ -1,6 +1,26 @@
 p {
-  color: green;
-  font-size: 20px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #f0f7fb;
+  background-position: 9px 0px;
+  background-repeat: no-repeat;
+  border: solid 1px #3498db;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 60px;
+  display: inline-block;
+}
+
+h3 {
   margin: 0;
   padding: 0;
+}
+
+p.full {
+  background-color: pink;
+  border: solid 1px red;
+  border-radius: 6px;
+  line-height: 18px;
+  padding: 15px 60px;
 }

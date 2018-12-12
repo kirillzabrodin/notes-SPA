@@ -1,13 +1,16 @@
-(function(exports){
+function Note(text, id) {
+  this.text = text;
+  this.id = id;
+}
 
-  function AddNote() {
-    document.getElementById("notes").innerHTML += "<p>" + document.getElementById("note-input").value + "</p>";
-  }
+Note.prototype.getText = function () {
+  return this.text;
+};
 
-  function ClearTextBox() {
-    document.getElementById("note-input").value = "";
-  }
+Note.prototype.getTitle = function () {
+  return this.text.substring(0,20);
+};
 
-  exports.AddNote = AddNote;
-  exports.ClearTextBox = ClearTextBox;
-})(this);
+Note.prototype.getId = function () {
+  return this.id;
+};
