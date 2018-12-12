@@ -22,6 +22,8 @@ function showNote() {
 
 function showHome() {
   LoadPageDefault()
+  ListenForClick()
+  ListenForSubmit()
   document.getElementById('notes').innerHTML = render.RenderNotes(noteList);
 }
 

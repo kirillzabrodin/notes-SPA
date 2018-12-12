@@ -6,7 +6,7 @@ describe('Views tests', function() {
       notepad.createNote("Hello");
       var render = new Render(notepad);
       expected = "<a id='6' href='#6'>Hello</a><br>"
-      expect(render.RenderNotes()).toEqual(expected);
+      expect(render.RenderNotes(notepad)).toEqual(expected);
     })
   })
 
@@ -15,8 +15,8 @@ describe('Views tests', function() {
       var notepad = new NotesList();
       notepad.createNote("Hello");
       var render = new Render(notepad);
-      expected = "<p class='full' id='7full'>Hello</p>"
-      expect(render.RenderNoteText(7)).toEqual(expected);
+      expected = "<a class='full' href='#home' id='7full'>Hello</a>"
+      expect(render.RenderNoteText(7,notepad)).toEqual(expected);
     })
   })
 
