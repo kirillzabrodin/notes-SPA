@@ -10,7 +10,7 @@ const matchers = (exp) => ({
     if (exp === value) {
       document.getElementById('results').innerHTML += "<h3 style='color: green;'>\xa0\xa0\xa0\xa0Pass</h3><br>";
     } else {
-      document.getElementById('results').innerHTML += "<h3 style='color: red;'>\xa0\xa0\xa0\xa0Fails Expected:" + exp + " but got " + value + "</h3><br>";
+      document.getElementById('results').innerHTML += "<h3 style='color: red;'>\xa0\xa0\xa0\xa0Fails Expected:" + value + " but got " + exp + "</h3><br>";
     }
   }
 });

@@ -3,7 +3,7 @@ describe('Notes tests', function() {
   describe('#getText', function() {
     it('returns note text', function() {
       var text = new Note('Hello');
-      expect(text.getText()).toEqual("Hello");
+      expect(text.text).toEqual("Hello");
     })
   })
 
@@ -16,8 +16,8 @@ describe('Notes tests', function() {
 
   describe('#getId', function() {
     it('returns note id', function() {
-      var text = new Note('Hello', 3);
-      expect(text.getId()).toEqual(3);
+      var text_other = new Note('Hello');
+      expect(text_other.getId()).toEqual(5);
     })
   })
 

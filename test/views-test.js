@@ -1,11 +1,12 @@
 describe('Views tests', function() {
 
-  describe('#RenderNote', function() {
+  describe('#RenderNotes', function() {
     it('returns note title in a p tag', function() {
       var notepad = new NotesList();
       notepad.createNote("Hello");
       var render = new Render(notepad);
-      expect(render.RenderNotes()).toEqual("<p id='0'>Hello</p><br>");
+      expected = "<a id='6' href='#6'>Hello</a><br>"
+      expect(render.RenderNotes()).toEqual(expected);
     })
   })
 
@@ -14,8 +15,8 @@ describe('Views tests', function() {
       var notepad = new NotesList();
       notepad.createNote("Hello");
       var render = new Render(notepad);
-      expected = "<p class='full' id='0full'>Hello</p>"
-      expect(render.RenderNoteText(0)).toEqual(expected);
+      expected = "<p class='full' id='7full'>Hello</p>"
+      expect(render.RenderNoteText(7)).toEqual(expected);
     })
   })
 

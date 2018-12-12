@@ -1,11 +1,9 @@
 function NotesList() {
   this.notes = [];
-  this.next_id = 0
 }
 
 NotesList.prototype.createNote = function (note) {
-  let new_note = new Note(note, this.next_id);
-  this.next_id ++;
+  let new_note = new Note(note);
   this.notes.push(new_note);
 };
 
