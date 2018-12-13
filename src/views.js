@@ -33,7 +33,7 @@ Render.prototype.NotesData = function () {
 
 Render.prototype.NavBar = function (noteList) {
   let notes = noteList.getNotes();
-  output = "<ul><li><a class='navbar' href='#home'>Home</a></li>"
+  output = "<ul><li><a class='navbar active' href='#home'>Home</a></li>"
   for (var i = 0; i < notes.length; i++) {
     output += "<li><a class='navbar' href='#" + notes[i].getId() + "'>" + notes[i].getTitle() + "</li>";
   }
