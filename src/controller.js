@@ -1,10 +1,8 @@
-var noteList = new NotesList();
-var render = new Render();
+const noteList = new NotesList();
+const render = new Render();
 
 window.onload = function() {
   LoadPageDefault()
-  ListenForClick()
-  ListenForSubmit()
 };
 
 function SubmitNote() {
@@ -13,24 +11,16 @@ function SubmitNote() {
     return
   }
   noteList.createNote(document.getElementById('note-input').value);
-  document.getElementById('notes').innerHTML = render.RenderNotes(noteList);
-  document.getElementById("note-input").value = "";
-  document.getElementById('navbar').innerHTML = render.NavBar(noteList);
-  ListenForClick()
+  LoadPageDefault()
 }
 
 function showNote() {
   let note_id = window.location.hash.split("#")[1];
-  LoadEmptyPage()
-
-  document.getElementById("full-note").innerHTML = render.RenderNoteText(note_id, noteList);
+  LoadNotePage(note_id)
 };
 
 function showHome() {
   LoadPageDefault()
-  ListenForClick()
-  ListenForSubmit()
-  document.getElementById('notes').innerHTML = render.RenderNotes(noteList);
 }
 
 function ListenForClick() {
@@ -51,13 +41,14 @@ function ListenForSubmit() {
 }
 
 function LoadPageDefault() {
-  document.getElementById('navbar').innerHTML = render.NavBar(noteList);
-  document.getElementById('form').innerHTML = render.Title();
-  document.getElementById('form').innerHTML += render.Form();
-  document.getElementById('form').innerHTML += render.NotesData();
+  document.getElementById('navbar').innerHTML = render.navBar(noteList);
+  document.getElementById('form').innerHTML = render.notesPage(noteList);
+  ListenForClick()
+  ListenForSubmit()
 }
 
-function LoadEmptyPage() {
-  document.getElementById('navbar').innerHTML = render.NavBar(noteList);
-  document.getElementById('form').innerHTML = render.NotesData();
+function LoadNotePage(note_id) {
+  document.getElementById('navbar').innerHTML = render.navBar(noteList);
+  document.getElementById('form').innerHTML = render.noteFull(noteList, note_id);
+  ListenForClick()
 }
