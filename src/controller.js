@@ -8,15 +8,21 @@ window.onload = function() {
 };
 
 function SubmitNote() {
+  if (document.getElementById('note-input').value === "") {
+    alert("Please enter a proper note")
+    return
+  }
   noteList.createNote(document.getElementById('note-input').value);
   document.getElementById('notes').innerHTML = render.RenderNotes(noteList);
   document.getElementById("note-input").value = "";
+  document.getElementById('navbar').innerHTML = render.NavBar(noteList);
   ListenForClick()
 }
 
 function showNote() {
   let note_id = window.location.hash.split("#")[1];
   LoadEmptyPage()
+
   document.getElementById("full-note").innerHTML = render.RenderNoteText(note_id, noteList);
 };
 
@@ -45,11 +51,13 @@ function ListenForSubmit() {
 }
 
 function LoadPageDefault() {
+  document.getElementById('navbar').innerHTML = render.NavBar(noteList);
   document.getElementById('form').innerHTML = render.Title();
   document.getElementById('form').innerHTML += render.Form();
   document.getElementById('form').innerHTML += render.NotesData();
 }
 
 function LoadEmptyPage() {
+  document.getElementById('navbar').innerHTML = render.NavBar(noteList);
   document.getElementById('form').innerHTML = render.NotesData();
 }

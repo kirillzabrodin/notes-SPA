@@ -1,32 +1,4 @@
-a {
-  background-color: #f0f7fb;
-  background-position: 9px 0px;
-  background-repeat: no-repeat;
-  border: solid 1px #3498db;
-  border-radius: 6px;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 15px 60px;
-  display: inline-block;
-}
-
-a.full {
-  border-radius: 6px;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 15px 60px;
-  display: inline-block;
-  background-color: pink;
-  border: solid 1px red;
-  border-radius: 6px;
-  line-height: 18px;
-  padding: 15px 60px;
-}
-
-h3 {
-  margin: 0;
-  padding: 0;
-}
+a { text-decoration: none;}
 
 textarea {
   width: 600px;
@@ -38,21 +10,23 @@ textarea {
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
+
 .btn {
-  background: #eb94d0;
-  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
-  border-radius: 28px;
-  text-shadow: 3px 2px 1px #9daef5;
-  box-shadow: 6px 5px 24px #666666;
-  font-family: Arial;
-  color: #fafafa;
-  font-size: 27px;
-  padding: 19px;
+  color: white;
+  background-color: grey;
+  background-position: 9px 0px;
+  border: solid 1px black;
+  border-radius: 6px;
+  line-height: 18px;
+  padding: 15px 20px;
+  margin: 10px 0px;
+  display: inline-block;
+  opacity: 0.9;
 }
 
 .btn:hover {
-  background: #2079b0;
-  background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+  color: grey;
+  background-color: white;
   text-decoration: none;
 }
 
@@ -68,22 +42,26 @@ body {
   display: block;
 }
 
-.title {
-  background: #eb94d0;
-  background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
-  color: white;
-  background-position: 9px 0px;
-  background-repeat: no-repeat;
-  border: solid 1px #3498db;
-  border-radius: 6px;
-  line-height: 18px;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
   overflow: hidden;
-  padding: 15px 60px;
-  display: inline-block;
+  background-color: #333;
 }
 
-.title:hover {
-  background: #2079b0;
-  background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px;
   text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
