@@ -33,18 +33,20 @@ var Controller = (function() {
   function LoadPageDefault() {
     document.getElementById('navbar').innerHTML = render.navBar(noteList);
     document.getElementById('form').innerHTML = render.notesPage(noteList);
-    ListenForClick()
     ListenForSubmit()
   }
 
   function LoadNotePage(note_id) {
     document.getElementById('navbar').innerHTML = render.navBar(noteList);
     document.getElementById('form').innerHTML = render.noteFull(noteList, note_id);
-    ListenForClick()
   }
+
   return {
+
     renderDOM: function() {
       LoadPageDefault()
+      ListenForClick()
     }
+
   }
 })
